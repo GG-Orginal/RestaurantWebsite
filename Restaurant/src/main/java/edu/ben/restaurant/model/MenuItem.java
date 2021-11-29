@@ -20,6 +20,8 @@ public class MenuItem {
     @Column
     String description;
     @Column
+    String typeOfMeal;
+    @Column
     Integer cost;
     @Column
     Integer timeToCook;

@@ -17,6 +17,7 @@ public class MenuItemService {
         MenuItem newMenuItem = new MenuItem();
         newMenuItem.setMenuItemName(menuItem.getMenuItemName());
         newMenuItem.setDescription(menuItem.getDescription());
+        newMenuItem.setTypeOfMeal(menuItem.getTypeOfMeal());
         newMenuItem.setCost(menuItem.getCost());
         newMenuItem.setTimeToCook(menuItem.getTimeToCook());
         menuItemRepository.save(newMenuItem);

@@ -38,6 +38,7 @@ export class ReviewComponent implements OnInit {
         this.reviewList.push(newreview);
         i++
       }
+      this.reviewList.reverse()
     });
   }
 

@@ -29,7 +29,7 @@ export class MenuComponent implements OnInit {
     var $filter = $('#filter');
     $container.isotope({
       filter: '*',
-      layoutMode: 'masonry',
+      layoutMode: 'fitRows',
       animationOptions: {
         duration: 750,
         easing: 'linear'

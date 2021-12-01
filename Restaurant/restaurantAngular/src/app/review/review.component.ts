@@ -51,7 +51,7 @@ export class ReviewComponent implements OnInit {
     }, err => {
       alert(JSON.stringify(err));
     })
-    alert("Review Posted!");
+    alert("Please Wait!");
     this.reviewList = [];
     this.getAllReviews();
   }

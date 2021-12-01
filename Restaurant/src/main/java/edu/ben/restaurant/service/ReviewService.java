@@ -10,23 +10,14 @@ import java.util.List;
 @Service
 public class ReviewService {
 
-    Long reviewID = 5l;
-
     @Autowired
     private ReviewRepository reviewRepository;
 
     public void createReview(Review review) {
         Review newReview = new Review();
-
-        newReview.setId(reviewID);
-        reviewID++;
-
         newReview.setComment(review.getComment());
         newReview.setTime(review.getTime());
-
         reviewRepository.save(newReview);
-
-
     }
 
     public Object getAllReviews() {

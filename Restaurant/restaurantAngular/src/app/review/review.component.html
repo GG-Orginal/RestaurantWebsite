@@ -1,0 +1,28 @@
+<p>review works!</p>
+
+<p style="color:DodgerBlue; font-size: 20px;"> Write your review here! </p>
+<form (submit)="postReview({id:0,comment:temptext, time:temptime})" method="post">
+  <input type="text" style="color:MediumSeaGreen;font-size: 30px; border-style: solid; border-color: MediumSeaGreen;" name="postbody" placeholder="Write your review here!" [(ngModel)]="temptext"/> <br><br>
+  <input style="margin:5px; display: inline-block" class="btn btn-success" type="submit" value="Post"/>
+</form>
+
+
+<table class="table table-bordered table-striped display-5 text-primary table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Comment</th>
+    <th>Time</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <tr *ngFor="let review of reviewList">
+    <td class="table-warning"><span>{{review.id}} </span></td>
+    <td class="table-warning"><span>{{review.comment}} </span></td>
+    <td class="table-warning"><span>{{review.time}} </span></td>
+
+  </tr>
+  </tbody>
+</table>

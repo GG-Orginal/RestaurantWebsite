@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {get} from 'scriptjs';
+import {HttpClient, HttpResponse} from "@angular/common/http";
+import {MenuItem} from "../model/MenuItem";
+import {MenuService} from "../service/menu.service";
 
 declare var $: any;
 
@@ -9,19 +12,19 @@ declare var $: any;
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  selectedItem: any;
+  menuItems: Array<MenuItem> = [];
 
-
-  constructor() {
+  constructor(private http: HttpClient, private menuService: MenuService) {
   }
 
   ngOnInit(): void {
     get("https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js", () => {
       //library has been loaded...
     });
+    this.getAllMenuItems();
   }
 
-  load(filter: String, $event: { target: any; }) {
+  loadFilter(filter: String, $event: { target: any; }) {
     var $container = $('.portfolioContainer');
     var $filter = $('#filter');
     $container.isotope({
@@ -53,5 +56,13 @@ export class MenuComponent implements OnInit {
     });
   }
 
+  getAllMenuItems(): void {
+    this.menuService.getAllMenuItems().subscribe(
+      (response: MenuItem[]) => {
+        this.menuItems = response;
+      }, (error: HttpResponse<any>) => {
+        alert(error.body.message());
+      });
+  }
 
 }

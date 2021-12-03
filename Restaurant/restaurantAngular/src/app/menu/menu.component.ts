@@ -3,6 +3,8 @@ import {get} from 'scriptjs';
 import {HttpClient, HttpResponse} from "@angular/common/http";
 import {MenuItem} from "../model/MenuItem";
 import {MenuService} from "../service/menu.service";
+import {CartService} from "../service/cart.service";
+import {Router} from "@angular/router";
 
 declare var $: any;
 
@@ -14,7 +16,7 @@ declare var $: any;
 export class MenuComponent implements OnInit {
   menuItems: Array<MenuItem> = [];
 
-  constructor(private http: HttpClient, private menuService: MenuService) {
+  constructor(private http: HttpClient, private menuService: MenuService, private cartService: CartService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -65,4 +67,8 @@ export class MenuComponent implements OnInit {
       });
   }
 
+  addToCart(item: MenuItem) {
+    this.cartService.addToCart(item);
+    // this.router.navigateByUrl('/cart');
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from './Location';
+import { LocationItem } from '../model/LocationItem';
 
 @Component({
   selector: 'app-make-reservation',
@@ -10,10 +10,11 @@ export class MakeReservationComponent implements OnInit {
 
   constructor() { }
 
-  locations: Location[] = [];
+  locations: LocationItem[] = [{address:"133 Some Street", city:"Chicago, IL"},{address:"133 Short Street", city:"Naperville, IL"}];
+  chosenLocation: LocationItem = this.locations[0];
 
   ngOnInit(): void {
-    
+
   }
 
 }

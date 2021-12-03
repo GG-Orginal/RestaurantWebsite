@@ -5,7 +5,7 @@ import {MakeReservationComponent} from "./make-reservation/make-reservation.comp
 
 const routes: Routes = [
   {path: 'menu', component: MenuComponent},
-  {path: 'makereservation', component: MakeReservationComponent}
+  {path: 'reservation', component: MakeReservationComponent}
 ];
 
 @NgModule({

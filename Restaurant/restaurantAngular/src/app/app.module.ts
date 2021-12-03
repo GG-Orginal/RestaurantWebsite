@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenuComponent } from './menu/menu.component';
+import { MakeReservationComponent } from './make-reservation/make-reservation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    MakeReservationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+<p>make-reservation works!</p>
+
+<h1>Make a Reservation</h1>
+
+<form>
+  <input id="fname" type="text" placeholder="First Name"/>
+  <input id="lname" type="text" placeholder="Last Name"/>
+
+  <label for="location">Choose a location:</label>
+  <select *ngFor="let loc of locations;" id="location" name="location">
+
+    <option value="{{loc}}">{{loc.name}}</option>
+
+  </select>
+
+  <input type="text" placeholder="Name"/>
+  <input type="text" placeholder="Name"/>
+</form>

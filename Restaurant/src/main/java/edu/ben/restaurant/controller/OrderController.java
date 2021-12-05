@@ -1,7 +1,8 @@
 package edu.ben.restaurant.controller;
 
 import edu.ben.restaurant.model.MenuItem;
-import edu.ben.restaurant.service.MenuItemService;
+import edu.ben.restaurant.model.Orders;
+import edu.ben.restaurant.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,20 +11,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/menu")
-public class MenuItemContoller {
+@RequestMapping("/api/order")
+public class OrderController {
 
     @Autowired
-    private MenuItemService menuItemService;
+    private OrdersService ordersService;
 
     @PostMapping
-    public ResponseEntity createMenuItem(@RequestBody MenuItem menuItem) {
-        menuItemService.createMenuItem(menuItem);
+    public ResponseEntity createOrder(@RequestBody Orders Orders) {
+        ordersService.createOrder(Orders);
         return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping("/get")
-    public ResponseEntity<List<MenuItem>> getAllMenuItem() {
-        return new ResponseEntity(menuItemService.getAllMenuItems(), HttpStatus.OK);
+    public ResponseEntity<List<Orders>> getAllOrders() {
+        return new ResponseEntity(ordersService.getAllOrders(), HttpStatus.OK);
     }
 }

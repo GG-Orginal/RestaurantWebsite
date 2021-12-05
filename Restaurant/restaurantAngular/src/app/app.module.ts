@@ -9,12 +9,14 @@ import { ReviewComponent } from './review/review.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ReviewComponent
+    CartComponent
   ],
   imports: [
     BrowserModule,

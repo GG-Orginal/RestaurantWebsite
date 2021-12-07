@@ -4,11 +4,11 @@
       <div class="col-lg-12">
         <div class=" col text-center">
           <ul class="col container-filter portfolioFilte list-unstyled" id="filter">
-            <li><a class="categories active" (click)="load('*', $event)">All</a></li>
-            <li><a class="categories" (click)="load('.branding', $event)">Branding</a></li>
-            <li><a class="categories" (click)="load('.design', $event)">Design</a></li>
-            <li><a class="categories" (click)="load('.photo', $event)">Photo</a></li>
-            <li><a class="categories" (click)="load('.coffee', $event)">coffee</a></li>
+            <li><a class="categories active" (click)="loadFilter('*', $event)">All</a></li>
+            <li><a class="categories" (click)="loadFilter('.lunch', $event)">Lunch</a></li>
+            <li><a class="categories" (click)="loadFilter('.dinner', $event)">Dinner</a></li>
+            <li><a class="categories" (click)="loadFilter('.soups', $event)">Soups</a></li>
+            <li><a class="categories" (click)="loadFilter('.appetisers', $event)">Appetisers</a></li>
           </ul>
         </div>
       </div>
@@ -18,7 +18,7 @@
       <div class="portfolioContainer row photo">
 
         <!-- project -->
-        <li class="col-md-6 col-lg-4 project shuffle-item filtered branding coffee" >
+        <li class="col-md-6 col-lg-4 project shuffle-item filtered {{a.typeOfMeal}}" *ngFor="let a of menuItems">
           <div class="card mb-0">
             <div class="project m-0">
               <figure class="portfolio-item">
@@ -27,7 +27,7 @@
                   <div class="overlay">
                     <div class="hovereffect-title project-icons">
                       <a href="#x" data-toggle="modal" data-target=".project-modal2"><i class="fa fa-eye"></i></a>
-                      <a href="#" class="image-lightbox" title="TEST 1"><i class="fa fa-share"></i></a>
+                      <a href="#" class="image-lightbox" title="{{a.menuItemName}}"><i class="fa fa-share"></i></a>
                     </div>
                     <!-- / project-icons -->
                   </div>
@@ -39,241 +39,12 @@
             </div>
             <!-- / project -->
             <div class="card-body">
-              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">TEST</a>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Skills:</b> Branding, Illustration</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Description:</b>Foood FoooD Foood Test Hello World</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Cost:</b>20</p>
-            </div>
-            <!-- / card-body -->
-          </div>
-          <!-- / card -->
-        </li>
-        <!-- / project -->
-
-        <!-- project -->
-        <li class="col-md-6 col-lg-4 project shuffle-item filtered branding photo" >
-          <div class="card mb-0">
-            <div class="project m-0">
-              <figure class="portfolio-item">
-                <div class="hovereffect">
-                  <img class="img-responsive" src="https://via.placeholder.com/350x180/FFF0F5/000000" alt="">
-                  <div class="overlay">
-                    <div class="hovereffect-title project-icons">
-                      <a href="#x" data-toggle="modal" data-target=".project-modal"><i class="fa fa-eye"></i></a>
-                      <a href="#" class="image-lightbox" title="FOOD"><i class="fa fa-share"></i></a>
-                    </div>
-                    <!-- / project-icons -->
-                  </div>
-                  <!-- / overlay -->
-                </div>
-                <!-- / hovereffect -->
-              </figure>
-              <!-- / portfolio-item -->
-            </div>
-            <!-- / project -->
-            <div class="card-body">
-              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">FOOD</a>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Skills:</b> Design, Branding</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Description:</b>Foood FoooD Foood Test Hello World</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Cost:</b>20</p>
-            </div>
-            <!-- / card-body -->
-          </div>
-          <!-- / card -->
-        </li>
-        <!-- / project -->
-
-        <!-- project -->
-        <li class="col-md-6 col-lg-4 project shuffle-item filtered design photo" >
-          <div class="card mb-0">
-            <div class="project m-0">
-              <figure class="portfolio-item">
-                <div class="hovereffect">
-                  <img class="img-responsive" src="https://via.placeholder.com/350x180/87CEFA/000000" alt="">
-                  <div class="overlay">
-                    <div class="hovereffect-title project-icons">
-                      <a href="#x" data-toggle="modal" data-target=".project-modal3"><i class="fa fa-eye"></i></a>
-                      <a href="#" class="image-lightbox" title="TEST 1"><i class="fa fa-share"></i></a>
-                    </div>
-                    <!-- / project-icons -->
-                  </div>
-                  <!-- / overlay -->
-                </div>
-                <!-- / hovereffect -->
-              </figure>
-              <!-- / portfolio-item -->
-            </div>
-            <!-- / project -->
-            <div class="card-body">
-              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">TEST 1</a>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Skills:</b> Design, Illustration</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Description:</b>Foood FoooD Foood Test Hello World</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Cost:</b>20</p>
-            </div>
-            <!-- / card-body -->
-          </div>
-          <!-- / card -->
-        </li>
-        <!-- / project -->
-
-        <!-- project -->
-        <li class="col-md-6 col-lg-4 project shuffle-item filtered branding design photo" >
-          <div class="card mb-0">
-            <div class="project m-0">
-              <figure class="portfolio-item">
-                <div class="hovereffect">
-                  <img class="img-responsive" src="https://via.placeholder.com/350x180/FFB6C1/000000" alt="">
-                  <div class="overlay">
-                    <div class="hovereffect-title project-icons">
-                      <a href="#x" data-toggle="modal" data-target=".project-modal3"><i class="fa fa-eye"></i></a>
-                      <a href="#" class="image-lightbox" title="FOOD 1"><i class="fa fa-share"></i></a>
-                    </div>
-                    <!-- / project-icons -->
-                  </div>
-                  <!-- / overlay -->
-                </div>
-                <!-- / hovereffect -->
-              </figure>
-              <!-- / portfolio-item -->
-            </div>
-            <!-- / project -->
-            <div class="card-body">
-              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">FOOD 1</a>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Skills:</b> Design, Illustration</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Description:</b>Foood FoooD Foood Test Hello World</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Cost:</b>20</p>
-            </div>
-            <!-- / card-body -->
-          </div>
-          <!-- / card -->
-        </li>
-        <!-- / project -->
-
-        <!-- project -->
-        <li class="col-md-6 col-lg-4 project shuffle-item filtered branding design coffee" >
-          <div class="card mb-0">
-            <div class="project m-0">
-              <figure class="portfolio-item">
-                <div class="hovereffect">
-                  <img class="img-responsive" src="https://via.placeholder.com/350x180/FFA07A/000000" alt="">
-                  <div class="overlay">
-                    <div class="hovereffect-title project-icons">
-                      <a href="#x" data-toggle="modal" data-target=".project-modal2"><i class="fa fa-eye"></i></a>
-                      <a href="#" class="image-lightbox" title="HELLO WORLD"><i class="fa fa-share"></i></a>
-                    </div>
-                    <!-- / project-icons -->
-                  </div>
-                  <!-- / overlay -->
-                </div>
-                <!-- / hovereffect -->
-              </figure>
-              <!-- / portfolio-item -->
-            </div>
-            <!-- / project -->
-            <div class="card-body">
-              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">HELLO WORLD</a>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Skills:</b> Branding</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Description:</b>Foood FoooD Foood Test Hello World</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Cost:</b>20</p>
-            </div>
-            <!-- / card-body -->
-          </div>
-          <!-- / card -->
-        </li>
-        <!-- / project -->
-
-        <!-- project -->
-        <li class="col-md-6 col-lg-4 project shuffle-item filtered branding design photo coffee" >
-          <div class="card mb-0">
-            <div class="project m-0">
-              <figure class="portfolio-item">
-                <div class="hovereffect">
-                  <img class="img-responsive" src="https://via.placeholder.com/350x180/B0C4DE/000000" alt="">
-                  <div class="overlay">
-                    <div class="hovereffect-title project-icons">
-                      <a href="#x" data-toggle="modal" data-target=".project-modal"><i class="fa fa-eye"></i></a>
-                      <a href="#" class="image-lightbox" title="CAMERON"><i class="fa fa-share"></i></a>
-                    </div>
-                    <!-- / project-icons -->
-                  </div>
-                  <!-- / overlay -->
-                </div>
-                <!-- / hovereffect -->
-              </figure>
-              <!-- / portfolio-item -->
-            </div>
-            <!-- / project -->
-            <div class="card-body">
-              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">CAMERON</a>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Skills:</b> Design</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Description:</b>Foood FoooD Foood Test Hello World</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Cost:</b>20</p>
-            </div>
-            <!-- / card-body -->
-          </div>
-          <!-- / card -->
-        </li>
-        <!-- / project -->
-
-        <!-- project -->
-        <li class="col-md-6 col-lg-4 project shuffle-item filtered" >
-          <div class="card mb-0">
-            <div class="project m-0">
-              <figure class="portfolio-item">
-                <div class="hovereffect">
-                  <img class="img-responsive" src="https://via.placeholder.com/350x180/B0C4DE/000000" alt="">
-                  <div class="overlay">
-                    <div class="hovereffect-title project-icons">
-                      <a href="#x" data-toggle="modal" data-target=".project-modal2"><i class="fa fa-eye"></i></a>
-                      <a href="#" class="image-lightbox" title="BRANDING"><i class="fa fa-share"></i></a>
-                    </div>
-                    <!-- / project-icons -->
-                  </div>
-                  <!-- / overlay -->
-                </div>
-                <!-- / hovereffect -->
-              </figure>
-              <!-- / portfolio-item -->
-            </div>
-            <!-- / project -->
-            <div class="card-body">
-              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">BRANDING</a>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Skills:</b> Branding</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Description:</b>Foood FoooD Foood Test Hello World</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Cost:</b>20</p>
-            </div>
-            <!-- / card-body -->
-          </div>
-          <!-- / card -->
-        </li>
-        <!-- / project -->
-
-        <!-- project -->
-        <li class="col-md-6 col-lg-4 project shuffle-item filtered" >
-          <div class="card mb-0">
-            <div class="project m-0">
-              <figure class="portfolio-item">
-                <div class="hovereffect">
-                  <img class="img-responsive" src="https://via.placeholder.com/350x180/9370DB/000000" alt="">
-                  <div class="overlay">
-                    <div class="hovereffect-title project-icons">
-                      <a href="#x" data-toggle="modal" data-target=".project-modal3"><i class="fa fa-eye"></i></a>
-                      <a href="#" class="image-lightbox" title="CUPCAKE"><i class="fa fa-share"></i></a>
-                    </div>
-                    <!-- / project-icons -->
-                  </div>
-                  <!-- / overlay -->
-                </div>
-                <!-- / hovereffect -->
-              </figure>
-              <!-- / portfolio-item -->
-            </div>
-            <!-- / project -->
-            <div class="card-body">
-              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">CUPCAKE</a>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Skills:</b> Design, Illustration</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Description:</b>Foood FoooD Foood Test Hello World</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Cost:</b>20</p>
+              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">{{a.menuItemName}}</a>
+              <p class="card-text mt-5 mb-0 fs-14 description"><b>Description:</b>{{a.description}}</p>
+              <p class="card-text mt-5 mb-0 fs-14"><b>Cost:</b>{{a.cost}}</p>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <a (click)="addToCart(a)" class="btn btn-success">Add to cart</a>
+              </div>
             </div>
             <!-- / card-body -->
           </div>

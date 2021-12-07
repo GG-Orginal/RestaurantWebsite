@@ -12,6 +12,6 @@ export class MenuService {
   }
 
   getAllMenuItems(): Observable<MenuItem[]> {
-    return this.http.get<Array<MenuItem>>("http://localhost:8080/api/menu");
+    return this.http.get<Array<MenuItem>>("http://localhost:8080/api/menu/get");
   }
 }

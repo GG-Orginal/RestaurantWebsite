@@ -1,10 +1,13 @@
 package edu.ben.restaurant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -14,16 +17,19 @@ public class MenuItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     @Column
-    String menuItemName;
+    private String menuItemName;
     @Column
-    String description;
+    private String description;
     @Column
-    String typeOfMeal;
+    private String typeOfMeal;
     @Column
-    Integer cost;
+    private Integer cost;
     @Column
-    Integer timeToCook;
+    private Integer timeToCook;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "orderItems")
+    private Set<Orders> orders = new HashSet<>();
 
 }

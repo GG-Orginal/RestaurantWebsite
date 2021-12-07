@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import {MenuComponent} from "./menu/menu.component";
 import {ReviewComponent} from "./review/review.component";
 import {CartComponent} from "./cart/cart.component";
+import {CheckoutComponent} from "./checkout/checkout.component";
 
 const routes: Routes = [
   {path: 'menu', component: MenuComponent},
   {path: 'review', component: ReviewComponent},
   {path: 'cart', component: CartComponent},
+  {path: 'checkout', component: CheckoutComponent},
 ];
 
 @NgModule({

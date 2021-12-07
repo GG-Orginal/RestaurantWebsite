@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CartService} from "../service/cart.service";
 import {Cart} from "../model/Cart";
 import {CartItem} from "../model/CartItem";
 import {Router} from "@angular/router";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {CheckoutComponent} from "../checkout/checkout.component";
 
 @Component({
   selector: 'app-cart',
@@ -11,33 +13,42 @@ import {Router} from "@angular/router";
 })
 export class CartComponent implements OnInit {
 
-  cart!:Cart
+  public cart!: Cart
 
-  constructor(private cartService: CartService, private router: Router) {
+  constructor(private cartService: CartService, private router: Router, private dialog: MatDialog) {
     this.setCart();
   }
 
   ngOnInit(): void {
-
+    console.log(this.cartService.getCart())
+    console.log(this.cart)
   }
 
-  removeFromCart(cartItem:CartItem){
+  removeFromCart(cartItem: CartItem) {
     this.cartService.removeFromCart(cartItem.menuItem.id);
     this.setCart();
   }
 
-  changeQuantity(cartItem:CartItem, quantityInString:string){
-    const quantity= parseInt(quantityInString);
+  changeQuantity(cartItem: CartItem, quantityInString: string) {
+    const quantity = parseInt(quantityInString);
     this.cartService.changeQuantity(cartItem.menuItem.id, quantity);
     this.setCart();
   }
 
-  setCart(){
+  setCart() {
     this.cart = this.cartService.getCart();
   }
 
-
   continueShopping() {
     this.router.navigateByUrl('/menu')
+  }
+
+  onSubmit() {
+    this.cartService.initializeFormGroup();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(CheckoutComponent, dialogConfig);
   }
 }

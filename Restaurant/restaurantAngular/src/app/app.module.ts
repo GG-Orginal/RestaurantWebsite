@@ -7,16 +7,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenuComponent } from './menu/menu.component';
 import { ReviewComponent } from './review/review.component';
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
-
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {CartService} from "./service/cart.service";
+import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ReviewComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +30,15 @@ import { CartComponent } from './cart/cart.component';
     BrowserAnimationsModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatDialogModule,
   ],
-  providers: [],
+  providers: [CartService,
+    { provide: MatDialogRef, useValue: {} },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

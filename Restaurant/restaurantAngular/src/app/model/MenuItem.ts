@@ -1,5 +1,5 @@
 export interface MenuItem {
-  id: String;
+  id: Number;
   menuItemName: String;
   description: String;
   typeOfMeal: String;

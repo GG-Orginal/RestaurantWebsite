@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenuComponent } from './menu/menu.component';
 import { ReviewComponent } from './review/review.component';
 import {HttpClientModule} from "@angular/common/http";
+import {CartComponent } from './cart/cart.component';
 import {FormsModule} from "@angular/forms";
 
 
@@ -14,6 +15,7 @@ import {FormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     MenuComponent,
+    CartComponent
     ReviewComponent
   ],
   imports: [

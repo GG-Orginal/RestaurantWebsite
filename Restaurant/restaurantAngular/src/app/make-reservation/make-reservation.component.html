@@ -1,0 +1,32 @@
+<div class="container">
+<h1>Make a Reservation</h1>
+
+<form>
+
+  <label for="fname">First Name:</label>
+  <input id="fname" type="text" placeholder="First Name"/>
+  <br/>
+
+  <label for="lname">Last Name:</label>
+  <input id="lname" type="text" placeholder="Last Name"/>
+  <br/>
+
+  <label for="locationSelect">Choose Location:</label>
+  <select
+    name="locationSelect"
+    id="locationSelect"
+    [(ngModel)]="chosenLocation">
+    <option *ngFor="let loc of locations" [value]="loc.city">{{ loc.city }}</option>
+  </select>
+  <br/>
+
+  <label for="timeSelect">When:</label>
+  <input id="timeSelect" type="datetime-local">
+  <br/>
+
+  <label for="noOfPeople">How many:</label>
+  <input id="noOfPeople" type="number" max="30" min="1">
+  <br/>
+
+</form>
+</div>

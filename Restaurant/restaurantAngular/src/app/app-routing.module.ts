@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'menu', component: MenuComponent},
   {path: 'review', component: ReviewComponent},
   {path: 'cart', component: CartComponent},
-  {path: 'reservation', component: MakeReservationComponent}
+  {path: 'reservation', component: MakeReservationComponent},
   {path: 'checkout', component: CheckoutComponent},
 ];
 

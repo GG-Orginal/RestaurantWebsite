@@ -20,7 +20,7 @@ public class OrdersService {
     @Autowired
     private MenuItemRepository menuItemRepository;
 
-    public void createOrder(Orders orders) {
+    public Orders createOrder(Orders orders) {
         Orders newOrders = new Orders();
         newOrders.setFirstName(orders.getFirstName());
         newOrders.setLastName(orders.getLastName());
@@ -50,7 +50,8 @@ public class OrdersService {
             }
         }
         newOrders.setTotal(orders.getTotal());
-        orderRepository.save(newOrders);
+        Orders order = orderRepository.save(newOrders);
+        return order;
     }
 
     public Object getAllOrders() {

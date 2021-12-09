@@ -19,8 +19,9 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity createOrder(@RequestBody Orders Orders) {
-        ordersService.createOrder(Orders);
-        return new ResponseEntity(HttpStatus.OK);
+        Orders placedOrder = ordersService.createOrder(Orders);
+// TODO: 12/9/2021 return order ID and time when food is finishede
+        return new ResponseEntity(placedOrder.getId(), HttpStatus.OK);
     }
 
     @GetMapping("/get")

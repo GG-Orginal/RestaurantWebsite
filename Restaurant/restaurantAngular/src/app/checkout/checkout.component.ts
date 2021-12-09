@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from "../service/cart.service";
 import {MatDialogRef} from "@angular/material/dialog";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-checkout',
@@ -9,7 +10,8 @@ import {MatDialogRef} from "@angular/material/dialog";
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(public cartService: CartService, public dialogRef: MatDialogRef<CheckoutComponent>) {
+  constructor(public cartService: CartService, public dialogRef: MatDialogRef<CheckoutComponent>, private router:Router
+  ) {
   }
 
   ngOnInit(): void {
@@ -25,6 +27,11 @@ export class CheckoutComponent implements OnInit {
       });
       this.cartService.form.reset();
       this.cartService.initializeFormGroup();
+
+
+      // this.router.navigateByUrl([‘path’]).then()
+
+
       // this.notificationService.success(':: Submitted successfully');
     }
     this.onClose()

@@ -90,7 +90,7 @@ export class CartService {
   newOrder(order: Order) {
     this.cart.items.forEach(item => {
       if (item.quantity > 1) {
-        for (let i = 0; i <= item.quantity; i++) {
+        for (let i = 0; i < item.quantity; i++) {
           order.orderItems.push(item.menuItem)
         }
       } else {

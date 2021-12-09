@@ -19,7 +19,6 @@ export class CheckoutComponent implements OnInit {
     if (this.cartService.form.valid) {
       console.log(this.cartService.form.value)
       this.cartService.form.patchValue({total: this.cartService.getCart().getTotalPrice()})
-      this.cartService.newOrder(this.cartService.form.value)
       this.cartService.newOrder(this.cartService.form.value).subscribe(response => {
       }, error => {
         console.log("error");

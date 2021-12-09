@@ -1,11 +1,15 @@
 package edu.ben.restaurant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.security.auth.Subject;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -44,4 +48,8 @@ public class Orders {
     public void createOrderItemsList(MenuItem item) {
         orderItems.add(item);
     }
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    private List<OrderItemList> orderItemLists = new ArrayList<>();
 }

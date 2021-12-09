@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenuComponent } from './menu/menu.component';
+import { MakeReservationComponent } from './make-reservation/make-reservation.component';
+import {FormsModule} from "@angular/forms";
 import { ReviewComponent } from './review/review.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -20,6 +22,7 @@ import {MatInputModule} from "@angular/material/input";
   declarations: [
     AppComponent,
     MenuComponent,
+    MakeReservationComponent,
     ReviewComponent,
     CartComponent,
     CheckoutComponent

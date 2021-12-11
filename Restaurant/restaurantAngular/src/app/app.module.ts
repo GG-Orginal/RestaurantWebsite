@@ -19,6 +19,9 @@ import {MatInputModule} from "@angular/material/input";
 import { OrderconfirmedComponent } from './orderconfirmed/orderconfirmed.component';
 import { OrderReadyTimePipe } from './pipes/order-ready-time.pipe';
 import { HomepageComponent } from './homepage/homepage.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -30,20 +33,23 @@ import { HomepageComponent } from './homepage/homepage.component';
     CheckoutComponent,
     OrderconfirmedComponent,
     OrderReadyTimePipe,
-    HomepageComponent
+    HomepageComponent,
+    NavbarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    NgbModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatCheckboxModule,
-    MatDialogModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        NgbModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatCheckboxModule,
+        MatDialogModule,
+        MatToolbarModule,
+        MatButtonModule,
+    ],
   providers: [CartService,
     { provide: MatDialogRef, useValue: {} },
   ],

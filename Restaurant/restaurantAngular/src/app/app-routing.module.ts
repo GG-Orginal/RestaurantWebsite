@@ -6,6 +6,7 @@ import {ReviewComponent} from "./review/review.component";
 import {CartComponent} from "./cart/cart.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {OrderconfirmedComponent} from "./orderconfirmed/orderconfirmed.component";
+import {HomepageComponent} from "./homepage/homepage.component";
 
 const routes: Routes = [
   {path: 'menu', component: MenuComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'reservation', component: MakeReservationComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'orderconfirmed', component: OrderconfirmedComponent},
+  {path: 'home', component: HomepageComponent},
 ];
 
 @NgModule({

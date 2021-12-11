@@ -18,6 +18,7 @@ import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
 import { OrderconfirmedComponent } from './orderconfirmed/orderconfirmed.component';
 import { OrderReadyTimePipe } from './pipes/order-ready-time.pipe';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { OrderReadyTimePipe } from './pipes/order-ready-time.pipe';
     CartComponent,
     CheckoutComponent,
     OrderconfirmedComponent,
-    OrderReadyTimePipe
+    OrderReadyTimePipe,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

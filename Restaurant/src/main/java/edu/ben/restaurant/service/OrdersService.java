@@ -3,6 +3,7 @@ package edu.ben.restaurant.service;
 import edu.ben.restaurant.model.MenuItem;
 import edu.ben.restaurant.model.OrderItemList;
 import edu.ben.restaurant.model.Orders;
+import edu.ben.restaurant.model.PlacedOrderReturn;
 import edu.ben.restaurant.repo.MenuItemRepository;
 import edu.ben.restaurant.repo.OrderRepository;
 import org.hibernate.criterion.Order;
@@ -20,8 +21,9 @@ public class OrdersService {
     @Autowired
     private MenuItemRepository menuItemRepository;
 
-    public Orders createOrder(Orders orders) {
+    public PlacedOrderReturn createOrder(Orders orders) {
         Orders newOrders = new Orders();
+        int orderReadyIn = 0;
         newOrders.setFirstName(orders.getFirstName());
         newOrders.setLastName(orders.getLastName());
         newOrders.setPhoneNumber(orders.getPhoneNumber());
@@ -29,6 +31,7 @@ public class OrdersService {
         newOrders.setDelivery(orders.getDelivery());
         for (MenuItem item : orders.getOrderItems()) {
             newOrders.createOrderItemsList(menuItemRepository.findById(item.getId()).get());
+            orderReadyIn += item.getTimeToCook();
             OrderItemList a = new OrderItemList();
             a.setMenuItems(menuItemRepository.findById(item.getId()).get());
             boolean repeat = false;
@@ -50,7 +53,9 @@ public class OrdersService {
             }
         }
         newOrders.setTotal(orders.getTotal());
-        Orders order = orderRepository.save(newOrders);
+        PlacedOrderReturn order = new PlacedOrderReturn();
+        order.setOrderNumber(orderRepository.save(newOrders).getId());
+        order.setOrderReadyIn(orderReadyIn);
         return order;
     }
 

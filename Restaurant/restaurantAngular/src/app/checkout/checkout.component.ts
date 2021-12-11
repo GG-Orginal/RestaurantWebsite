@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CartService} from "../service/cart.service";
 import {MatDialogRef} from "@angular/material/dialog";
 import {Router} from "@angular/router";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-checkout',
@@ -9,6 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
+  public order: any = {id:''}
 
   constructor(public cartService: CartService, public dialogRef: MatDialogRef<CheckoutComponent>, private router:Router
   ) {
@@ -23,6 +25,8 @@ export class CheckoutComponent implements OnInit {
       this.cartService.form.patchValue({total: this.cartService.getCart().getTotalPrice()})
       this.cartService.newOrder(this.cartService.form.value).subscribe(response => {
         console.log(response)
+        this.order.id = response
+        this.router.navigateByUrl('/orderconfirmed', { state: this.order })
       }, error => {
         console.log("error");
       });

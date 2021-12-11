@@ -16,6 +16,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {CartService} from "./service/cart.service";
 import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
+import { OrderconfirmedComponent } from './orderconfirmed/orderconfirmed.component';
+import { OrderReadyTimePipe } from './pipes/order-ready-time.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {MatInputModule} from "@angular/material/input";
     MakeReservationComponent,
     ReviewComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    OrderconfirmedComponent,
+    OrderReadyTimePipe
   ],
   imports: [
     BrowserModule,

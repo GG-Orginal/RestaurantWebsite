@@ -27,6 +27,8 @@ public class MenuItem {
     @Column
     private String typeOfMeal;
     @Column
+    private String imageUrl;
+    @Column
     private Integer cost;
     @Column
     private Integer timeToCook;

@@ -3,6 +3,7 @@ export interface MenuItem {
   menuItemName: String;
   description: String;
   typeOfMeal: String;
+  imageUrl: String;
   cost: Number;
   timeToCook: Number;
 }

@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'reservation', component: MakeReservationComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'orderconfirmed', component: OrderconfirmedComponent},
-  {path: 'home', component: HomepageComponent},
+  {path: '**', component: HomepageComponent},
 ];
 
 @NgModule({

@@ -20,7 +20,7 @@
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">Action</th>
-                          <th scope="col">Photo</th>
+<!--                          <th scope="col">Photo</th>-->
                           <th scope="col">Product</th>
                           <th scope="col">Qty</th>
                           <th scope="col">Price</th>
@@ -31,15 +31,15 @@
                         <tr *ngFor="let item of cart.items; let i = index">
                           <th scope="row">{{i+1}}</th>
                           <td><a (click)="removeFromCart(item)" class="text-danger"><i class="ri-delete-bin-3-line"></i></a></td>
-                          <td><img src="https://themesbox.in/admin-templates/olian/html/light-vertical/assets/images/ecommerce/product_01.svg" class="img-fluid" width="35" alt="product"></td>
+<!--                          <td><img src="https://themesbox.in/admin-templates/olian/html/light-vertical/assets/images/ecommerce/product_01.svg" class="img-fluid" width="35" alt="product"></td>-->
                           <td>{{item.menuItem.menuItemName}}</td>
                           <td>
                             <div class="form-group mb-0">
                               <input (change)="changeQuantity(item, cartQty1.value)" type="number" class="form-control cart-qty" name="cartQty1" #cartQty1 value="{{item.quantity}}">
                             </div>
                           </td>
-                          <td>{{item.menuItem.cost}}</td>
-                          <td class="text-right">{{item.getPrice()}}</td>
+                          <td>${{item.menuItem.cost}}</td>
+                          <td class="text-right">{{item.getPrice()  | currency}}</td>
                         </tr>
                         </tbody>
                       </table>

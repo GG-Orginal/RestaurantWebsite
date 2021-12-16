@@ -70,5 +70,7 @@ export class MenuComponent implements OnInit {
   addToCart(item: MenuItem) {
     this.cartService.addToCart(item);
     // this.router.navigateByUrl('/cart');
+    alert("Please Wait!");
+
   }
 }

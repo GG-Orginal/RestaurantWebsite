@@ -26,10 +26,6 @@
                 <div class="hovereffect">
                   <img class="img-responsive" src="{{a.imageUrl}}" width="300" height="300" alt="">
                   <div class="overlay">
-                    <div class="hovereffect-title project-icons">
-                      <a href="#x" data-toggle="modal" data-target=".project-modal2"><i class="fa fa-eye"></i></a>
-                      <a href="#" class="image-lightbox" title="{{a.menuItemName}}"><i class="fa fa-share"></i></a>
-                    </div>
                     <!-- / project-icons -->
                   </div>
                   <!-- / overlay -->
@@ -40,10 +36,10 @@
             </div>
             <!-- / project -->
             <div class="card-body">
-              <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">{{a.menuItemName}}</a>
+              <p class="card-title title-link fs-16 fw-bold">{{a.menuItemName}}</p>
               <p class="card-text mt-5 mb-0 fs-14 description"><b>Description:<br>
               </b>{{a.description}}</p>
-              <p class="card-text mt-5 mb-0 fs-14"><b>Cost: $</b>{{a.cost }}</p>
+              <p class="card-text mt-5 mb-0 fs-14"><b>Cost: </b>{{a.cost.toString() | currency}}</p>
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <a (click)="addToCart(a)" class="btn btn-success">Add to cart</a>
               </div>

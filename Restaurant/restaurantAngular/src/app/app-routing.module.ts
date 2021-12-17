@@ -7,6 +7,7 @@ import {CartComponent} from "./cart/cart.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {OrderconfirmedComponent} from "./orderconfirmed/orderconfirmed.component";
 import {HomepageComponent} from "./homepage/homepage.component";
+import {OrderlookupComponent} from "./orderlookup/orderlookup.component";
 
 const routes: Routes = [
   {path: 'menu', component: MenuComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'reservation', component: MakeReservationComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'orderconfirmed', component: OrderconfirmedComponent},
+  {path: 'orderlookup', component: OrderlookupComponent},
   {path: '**', component: HomepageComponent},
 ];
 

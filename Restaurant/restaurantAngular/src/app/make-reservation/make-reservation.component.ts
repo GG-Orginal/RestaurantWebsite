@@ -3,7 +3,6 @@ import { LocationItem } from '../model/LocationItem';
 import {ReservationService} from "../service/reservation.service";
 import {Reservation} from "../model/Reservation";
 import {Router} from "@angular/router";
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-make-reservation',

@@ -23,6 +23,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import { SearchReservationComponent } from './search-reservation/search-reservation.component';
+import { OrderlookupComponent } from './orderlookup/orderlookup.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -36,22 +39,26 @@ import { SearchReservationComponent } from './search-reservation/search-reservat
     OrderReadyTimePipe,
     HomepageComponent,
     NavbarComponent,
-    SearchReservationComponent
+    SearchReservationComponent,
+    OrderlookupComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        NgbModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatCheckboxModule,
-        MatDialogModule,
-        MatToolbarModule,
-        MatButtonModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatTableModule,
+    MatListModule,
+    MatInputModule,
+  ],
   providers: [CartService,
     { provide: MatDialogRef, useValue: {} },
   ],

@@ -15,7 +15,7 @@
           <tr>
             <input formControlName="phoneNumber" type="text" class="col" placeholder="Phone Number">
             <mat-error *ngIf="cartService.form.get('phoneNumber')?.invalid">This field is mandatory.</mat-error>
-            <mat-checkbox class="col" formControlName="delivery">Delivery ?</mat-checkbox>
+            <mat-checkbox class="col" formControlName="delivery">Do You Want Delivery?</mat-checkbox>
             <button type="submit" class="btn col btn-primary" [disabled]="cartService.form.invalid">Submit</button>
           </tr>
           </tbody>

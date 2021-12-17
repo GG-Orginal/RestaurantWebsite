@@ -28,10 +28,14 @@ public class ReservationController {
     }
 
     @GetMapping("/getAllReservations")
-    public List<Reservation> getAllReviews() {
+    public List<Reservation> getAllResvs() {
         return reservationService.getAllReservations();
     }
 
+    @GetMapping("/searchReservation/{searchno}")
+    public List<Reservation> searchReservations(@PathVariable String searchno) {
+        return reservationService.searchReservations(searchno);
+    }
 
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)

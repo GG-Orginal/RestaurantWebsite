@@ -15,6 +15,10 @@ export class ReservationService {
     return this.http.post<Reservation>(`api/reservation/makeReservation`,data);
   }
 
+  public searchReservation = (searchno:string): Observable<Reservation[]> => {
+    return this.http.get<Reservation[]>(`api/reservation/searchReservation/${searchno}`);
+  }
+
 
 
 }

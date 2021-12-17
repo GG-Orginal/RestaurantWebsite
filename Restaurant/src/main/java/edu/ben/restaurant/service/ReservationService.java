@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -40,6 +41,22 @@ public class ReservationService {
         newResvervation.setPhoneNumber(reservation.getPhoneNumber());
         reservationRepository.save(newResvervation);
         return newResvervation;
+    }
+
+    public List<Reservation> searchReservations(String searchno){
+        List<Reservation> resvs = new ArrayList<Reservation>();
+
+        if(searchno.charAt(0) == 'p'){
+            String phone = searchno.substring(1);
+            resvs = reservationRepository.findAllByPhoneNumber(phone);
+        }
+
+        if(searchno.charAt(0) == 'c'){
+            String confno = searchno.substring(1);
+            resvs = reservationRepository.findAllByConfirmationNumber(confno);
+        }
+
+        return resvs;
     }
 
     public List<Reservation> getAllReservations() {

@@ -1,32 +1,95 @@
 <div class="container">
 <h1>Make a Reservation</h1>
+<hr/>
 
-<form>
 
-  <label for="fname">First Name:</label>
-  <input id="fname" type="text" placeholder="First Name"/>
-  <br/>
+  <table class="resvform">
+    <tr>
+      <td>
+        <form>
+          <label for="name">Name</label>
+          <br/>
+          <input id="name" name="name" type="text" placeholder="Name" [(ngModel)]="name"/>
+          <br/>
+          <br/>
+          <label for="locationSelect">Choose Location</label>
+          <br/>
+          <select name="locationSelect" id="locationSelect" [(ngModel)]="location">
+            <option *ngFor="let loc of locations" [value]="loc">{{ loc }}</option>
+          </select>
+          <br/>
+          <br/>
+          <label for="datetimeSelect">Date and Time</label>
+          <br/>
+          <input id="datetimeSelect" name="datetime" type="datetime-local" [(ngModel)]="datetime">
+          <br/>
+          <br/>
+          <label for="noOfPeople">Head Count</label>
+          <br/>
+          <input id="noOfPeople" name="howmany" type="number" max="30" min="1" [(ngModel)]="howMany">
+          <br/>
+          <br/>
+          <label for="phoneNumber">Phone Number</label>
+          <br/>
+          <input id="phoneNumber" (blur)="cleanPhone()" name="phone" maxlength="10" type="text" [(ngModel)]="phoneNumber"/>
+          <br/>
+          <br/>
+          <button id="submitResv" (click)="onSubmit()">Make Reservation</button>
 
-  <label for="lname">Last Name:</label>
-  <input id="lname" type="text" placeholder="Last Name"/>
-  <br/>
+          <p name="errortext" style="color:red">{{errorText}}</p>
 
-  <label for="locationSelect">Choose Location:</label>
-  <select
-    name="locationSelect"
-    id="locationSelect"
-    [(ngModel)]="chosenLocation">
-    <option *ngFor="let loc of locations" [value]="loc.city">{{ loc.city }}</option>
-  </select>
-  <br/>
+          <!--  &lt;!&ndash; The Modal &ndash;&gt;-->
+          <!--  <div id="myModal" class="modal" ng-style="{'display':modalDisplay}">-->
 
-  <label for="timeSelect">When:</label>
-  <input id="timeSelect" type="datetime-local">
-  <br/>
+          <!--    &lt;!&ndash; Modal content &ndash;&gt;-->
+          <!--    <div class="modal-content">-->
+          <!--      <span class="close" (click)="">&times;</span>-->
+          <!--      <p>{{modalText}}</p>-->
+          <!--    </div>-->
 
-  <label for="noOfPeople">How many:</label>
-  <input id="noOfPeople" type="number" max="30" min="1">
-  <br/>
+          <!--  </div>-->
 
-</form>
+        </form>
+        <p class="confirm">{{confirmationNumber}}</p>
+
+
+      </td>
+      <td>
+      </td>
+    </tr>
+  </table>
+
+
 </div>
+
+<script>
+
+
+
+  // // Get the modal
+  // var modal = document.getElementById("myModal");
+  //
+  // // Get the button that opens the modal
+  // var btn = document.getElementById("submitResv");
+  //
+  // // Get the <span> element that closes the modal
+  // var span = document.getElementsByClassName("close")[0];
+  //
+  // function openModal() {
+  //   modal.style.display = "block";
+  // }
+  //
+  // function closeModal() {
+  //   modal.style.display = "none";
+  // }
+  // // When the user clicks the button, open the modal
+  // btn.onclick = function() {
+  //   modal.style.display = "block";
+  // }
+  //
+  // // When the user clicks on <span> (x), close the modal
+  // span.onclick = function() {
+  //   modal.style.display = "none";
+  // }
+
+</script>

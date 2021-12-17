@@ -1,1 +1,29 @@
-<p>search-reservation works!</p>
+<div class="container">
+  <h1>Look Up Your Reservation</h1>
+  <hr/>
+
+  <div class="tabbox">
+    <button class="tab" (click)="searchPhone()">By Phone Number</button>
+    <button class="tab" (click)="searchConfNo()">By Confirmation Number</button>
+  </div>
+
+  <p>{{searchtitle}}</p>
+  <input maxlength="10" id="searchbox" type="text" name="inp" placeholder="{{placeholdertext}}" [(ngModel)]="input">
+
+  <button (click)="search()">Search</button>
+
+  <hr>
+
+  <p>{{noresults}}</p>
+
+  <div *ngFor="let resv of reservations; let i=index;">
+    <div class="resvrow">
+      <div class="content"><p>Name: {{resv.name}}</p></div>
+      <div class="content"><p>Phone Number: {{resv.phoneNumber}}</p></div>
+      <div class="content"><p>Address: {{resv.location}}</p></div>
+      <div class="content"><p>Date/Time: {{resv.datetime}}</p></div>
+      <div class="content"><p>Confirmation Number: {{resv.confirmationNumber}}</p></div>
+    </div>
+  </div>
+
+</div>

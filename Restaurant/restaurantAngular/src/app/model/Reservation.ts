@@ -5,7 +5,8 @@ export class Reservation {
   location: string | undefined;
   name: string | undefined;
   howMany: number = 1;
-  datetime: string | undefined;
+  datetime: number | undefined;
+  phoneNumber: string | undefined;
 
   confirmationNumber: string | undefined;
 }

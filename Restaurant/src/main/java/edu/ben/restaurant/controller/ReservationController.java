@@ -27,17 +27,9 @@ public class ReservationController {
         return reservationService.createReservation(resv);
     }
 
-    @GetMapping("/getAllResv")
+    @GetMapping("/getAllReservations")
     public List<Reservation> getAllReviews() {
-        Reservation newResv = new Reservation();
-        newResv.setId(0L);
-        newResv.setDatetime("2 oclock");
-        newResv.setLocation("Chicago");
-        newResv.setHowMany(2L);
-        newResv.setConfirmationNumber("1243");
-        List<Reservation> reservationsList = new ArrayList<Reservation>();
-        reservationsList.add(newResv);
-        return reservationsList;
+        return reservationService.getAllReservations();
     }
 
 

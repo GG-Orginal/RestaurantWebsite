@@ -22,6 +22,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
+import { SearchReservationComponent } from './search-reservation/search-reservation.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatButtonModule} from "@angular/material/button";
     OrderconfirmedComponent,
     OrderReadyTimePipe,
     HomepageComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchReservationComponent
   ],
     imports: [
         BrowserModule,

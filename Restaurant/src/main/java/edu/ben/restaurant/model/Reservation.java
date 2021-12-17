@@ -24,6 +24,8 @@ public class Reservation {
     @Column
     Long howMany;
     @Column
+    String phoneNumber;
+    @Column
     String confirmationNumber;
 
 }

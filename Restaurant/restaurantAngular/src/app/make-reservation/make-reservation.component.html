@@ -1,47 +1,71 @@
 <div class="container">
 <h1>Make a Reservation</h1>
+<hr/>
 
-<form>
 
-  <label for="name">Name:</label>
-  <input id="name" name="name" type="text" placeholder="Name" [(ngModel)]="name"/>
-  <br/>
+  <table class="resvform">
+    <tr>
+      <td>
+        <form>
+          <label for="name">Name</label>
+          <br/>
+          <input id="name" name="name" type="text" placeholder="Name" [(ngModel)]="name"/>
+          <br/>
+          <br/>
+          <label for="locationSelect">Choose Location</label>
+          <br/>
+          <select name="locationSelect" id="locationSelect" [(ngModel)]="location">
+            <option *ngFor="let loc of locations" [value]="loc">{{ loc }}</option>
+          </select>
+          <br/>
+          <br/>
+          <label for="datetimeSelect">Date and Time</label>
+          <br/>
+          <input id="datetimeSelect" name="datetime" type="datetime-local" [(ngModel)]="datetime">
+          <br/>
+          <br/>
+          <label for="noOfPeople">Head Count</label>
+          <br/>
+          <input id="noOfPeople" name="howmany" type="number" max="30" min="1" [(ngModel)]="howMany">
+          <br/>
+          <br/>
+          <label for="phoneNumber">Phone Number</label>
+          <br/>
+          <input id="phoneNumber" (blur)="cleanPhone()" name="phone" maxlength="10" type="text" [(ngModel)]="phoneNumber"/>
+          <br/>
+          <br/>
+          <button id="submitResv" (click)="onSubmit()">Make Reservation</button>
 
-  <label for="locationSelect">Choose Location:</label>
-  <select
-    name="locationSelect"
-    id="locationSelect"
-    [(ngModel)]="location">
-    <option *ngFor="let loc of locations" [value]="loc">{{ loc }}</option>
-  </select>
-  <br/>
+          <p name="errortext" style="color:red">{{errorText}}</p>
 
-  <label for="datetimeSelect">When:</label>
-  <input id="datetimeSelect" name="datetime" type="datetime-local" [(ngModel)]="datetime">
-  <br/>
+          <!--  &lt;!&ndash; The Modal &ndash;&gt;-->
+          <!--  <div id="myModal" class="modal" ng-style="{'display':modalDisplay}">-->
 
-  <label for="noOfPeople">How many:</label>
-  <input id="noOfPeople" name="howmany" type="number" max="30" min="1" [(ngModel)]="howMany">
-  <br/>
+          <!--    &lt;!&ndash; Modal content &ndash;&gt;-->
+          <!--    <div class="modal-content">-->
+          <!--      <span class="close" (click)="">&times;</span>-->
+          <!--      <p>{{modalText}}</p>-->
+          <!--    </div>-->
 
-  <button id="submitResv" (click)="onSubmit()">Make Reservation</button>
+          <!--  </div>-->
 
-<!--  &lt;!&ndash; The Modal &ndash;&gt;-->
-<!--  <div id="myModal" class="modal" ng-style="{'display':modalDisplay}">-->
+        </form>
+        <p class="confirm">{{confirmationNumber}}</p>
 
-<!--    &lt;!&ndash; Modal content &ndash;&gt;-->
-<!--    <div class="modal-content">-->
-<!--      <span class="close" (click)="">&times;</span>-->
-<!--      <p>{{modalText}}</p>-->
-<!--    </div>-->
 
-<!--  </div>-->
+      </td>
+      <td>
+      </td>
+    </tr>
+  </table>
 
-</form>
 
 </div>
 
 <script>
+
+
+
   // // Get the modal
   // var modal = document.getElementById("myModal");
   //

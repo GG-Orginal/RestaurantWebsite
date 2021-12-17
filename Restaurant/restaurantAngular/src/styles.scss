@@ -46,3 +46,43 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   text-decoration: none;
   cursor: pointer;
 }
+
+.resvform {
+
+
+  margin: 10px;
+  tr{
+    width:40%;
+  }
+  td{
+    width:10%;
+  }
+  input, select{
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  button {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #6fb3e0;
+    color:white;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    width:100%;
+  }
+
+}
+
+.confirm {
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  font-size:15px;
+  background-color: #6fb3e0;
+  color:white;
+}

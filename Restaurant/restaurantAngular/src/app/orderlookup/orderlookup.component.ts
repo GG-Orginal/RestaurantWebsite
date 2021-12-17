@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpResponse} from "@angular/common/http";
 import {OrderlookupService} from "../service/orderlookup.service";
 import {Order} from "../model/Order";
@@ -11,8 +11,8 @@ import {MatTableDataSource} from "@angular/material/table";
   styleUrls: ['./orderlookup.component.scss'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({ height: '0px', minHeight: '0' })),
-      state('expanded', style({ height: '*' })),
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
@@ -22,10 +22,11 @@ export class OrderlookupComponent implements OnInit {
   isTableExpanded = false;
 
   dataOrdersList = new MatTableDataSource();
-  displayedColumnsList: string[] = ['id', 'first name', 'last name', 'address', 'phone #', 'total', 'actions'];
+  displayedColumnsList: string[] = ['id', 'first name', 'last name', 'address', 'phone #', 'total', 'delivery', 'actions'];
   searchKey: any;
 
-  constructor(private orderLookupService: OrderlookupService) { }
+  constructor(private orderLookupService: OrderlookupService) {
+  }
 
   ngOnInit(): void {
     this.getAllOrders()

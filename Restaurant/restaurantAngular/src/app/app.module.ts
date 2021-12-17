@@ -26,6 +26,7 @@ import { SearchReservationComponent } from './search-reservation/search-reservat
 import { OrderlookupComponent } from './orderlookup/orderlookup.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatListModule} from "@angular/material/list";
+import { YesNoPipe } from './pipes/yes-no.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {MatListModule} from "@angular/material/list";
     HomepageComponent,
     NavbarComponent,
     SearchReservationComponent,
-    OrderlookupComponent
+    OrderlookupComponent,
+    YesNoPipe
   ],
   imports: [
     BrowserModule,

@@ -22,7 +22,7 @@ export class OrderlookupComponent implements OnInit {
   isTableExpanded = false;
 
   dataOrdersList = new MatTableDataSource();
-  displayedColumnsList: string[] = ['id', 'name', 'address', 'total', 'actions'];
+  displayedColumnsList: string[] = ['id', 'first name', 'last name', 'address', 'phone #', 'total', 'actions'];
   searchKey: any;
 
   constructor(private orderLookupService: OrderlookupService) { }
